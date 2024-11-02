@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Picker</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 300px;
+      width: 200px;
+      margin: 0;
+      background-color: #000;
+      border-radius: 5px ;
+    }
+    #colorDisplay { 
+      width: 150px; 
+      height: 150px; 
+      border: 1px solid #222; 
+      margin-bottom: 10px;
+      border-radius: 4px;
+    }
+    #colorCodeContainer { 
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+    }
+    #colorCode { 
+      margin-right: 10px; 
+    }
+
+
+
+/* CSS */
+.button-85 {
+    margin-top: 10px;
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+  </style>
+</head>
+<body>
+  <h2 style="font-size: 22px; color: white;">COLOR PICKER</h2>
+  <div id="colorDisplay"></div>
+  <button id="pickColor" class="button-85" role="button">Pick Color</button>
+  <div id="colorCodeContainer">
+    <p id="colorCode" style="font-size: 15px; color: white;"></p>
+    <button id="copyColor" class="button-85" role="button" style="display: none; margin-top: 8px; margin-bottom: 8px; padding: 0.5em 0.5em;" > <img style="height: 15px; width: 15px ;" src="https://cdn-icons-png.flaticon.com/512/7795/7795733.png"> </button>
+  </div>
+</body>
+<script src="popup.js"></script>
+</html>
+
+
+
+
